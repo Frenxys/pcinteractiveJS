@@ -14,13 +14,16 @@ document.getElementById("form").addEventListener("submit", function(event) {
                 immagini.innerHTML+="<br>";
             }
             let immagine=document.createElement('img');
-            immagine.onclick = function() { cambia(this.id); };
             immagine.src="icona1.jpg";
             immagine.width="100";
             immagine.id=conta;
+            
             immagine.height="100";
-            immagine.className="immagine1";
+
             immagini.appendChild(immagine);
+            immagine.onclick = function() {
+                cambia(this.id);
+              };
         }
     }
     
@@ -29,7 +32,6 @@ document.getElementById("form").addEventListener("submit", function(event) {
 
   function cambia(id){
     immagine=document.getElementById(id);
-    console.log(immagine.className);
     
     if(immagine.className==="immagine1"){
         immagine.src="icona2.jpg";
